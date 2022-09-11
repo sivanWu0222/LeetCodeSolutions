@@ -30,6 +30,17 @@ func shuffle(nums []int, n int) []int {
 	return ret
 }
 
+// 按照LeetCode题解进一步优化
+
+func shuffle(nums []int, n int) []int {
+	ret := make([]int, n<<1)
+	for i := 0; i < n; i++ {
+		ret[2*i] = nums[i]
+		ret[2*i+1] = nums[i+n]
+	}
+	return ret
+}
+
 func main() {
 	fmt.Println(shuffle([]int{1, 2, 3, 4}, 2))
 	fmt.Println(shuffle([]int{2, 5, 1, 3, 4, 7}, 3))
