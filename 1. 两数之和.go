@@ -6,18 +6,24 @@ package main
  * @Desc:
  **/
 
+//
+// twoSum
+// @Description:
+// @param nums:
+// @param target:
+// @return []int:
+//
 func twoSum(nums []int, target int) []int {
+	// key是元素在nums中的下标，val是元素的值
 	hmap := make(map[int]int)
-	for i := 0; i < len(nums); i++ {
-		//首先检查target-nums[i]是否在hmap中
-		if index, ok := hmap[target-nums[i]]; ok {
+	for index, num := range nums {
+		// 如果 目标值 - 当前遍历到的元素 出现在map中，就可以返回结果了
+		if i, ok := hmap[target-num]; ok {
 			return []int{index, i}
 		}
-		//加入到map中
-		hmap[nums[i]] = i
+		hmap[num] = index
 	}
 
-	//走到这里，说明最后结果是不存在的
+	// 走到这里说明结果为空
 	return nil
 }
-
