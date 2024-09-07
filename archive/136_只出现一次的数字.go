@@ -1,9 +1,9 @@
-package 热题100
+package main
 
 /**
  * @Author: yirufeng
  * @Date: 2021/10/19 4:30 下午
- * @Desc:
+ * @Desc: 利用性质：一个数字与自己异或运算之后等于0
  **/
 func singleNumber(nums []int) int {
 	ret := 0

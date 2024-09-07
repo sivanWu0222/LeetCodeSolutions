@@ -14,10 +14,10 @@ package main
  * }
  */
 
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
+//type ListNode struct {
+//	Val  int
+//	Next *ListNode
+//}
 
 func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 	//建立一个dummy node
@@ -42,7 +42,7 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 
 	//到最后可能进位还有值
 	if carry != 0 {
-		cur.Next=&ListNode{
+		cur.Next = &ListNode{
 			Val: carry,
 		}
 	}

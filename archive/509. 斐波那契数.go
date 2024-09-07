@@ -10,18 +10,17 @@ import "fmt"
  * @Desc:
  **/
 
-
 //方法一
-func fib(n int) int {
+//func fib(n int) int {
+//
+//	if n <= 1 {
+//		return n
+//	}
+//
+//	return fib(n-1) + fib(n-2)
+//}
 
-	if n <= 1 {
-		return n
-	}
-
-	return fib(n-1) + fib(n-2)
-}
-
-//方法二：常数dp
+// 方法二：常数dp
 func fib(n int) int {
 
 	if n <= 1 {
@@ -31,7 +30,7 @@ func fib(n int) int {
 	prev, cur := 0, 1
 
 	for i := 1; i < n; i++ {
-		prev, cur = cur, prev + cur
+		prev, cur = cur, prev+cur
 	}
 	return cur
 }

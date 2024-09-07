@@ -10,31 +10,30 @@ import "unicode"
  * @Desc:
  **/
 
-
 /**
 方法一：思路，检查大小写的抽取出一个函数
- */
-func detectCapitalUse(word string) bool {
-	//如果长度为0或1直接返回true
-	if len(word) <= 1 {
-		return true
-	}
+*/
+//func detectCapitalUse(word string) bool {
+//	//如果长度为0或1直接返回true
+//	if len(word) <= 1 {
+//		return true
+//	}
+//
+//	//如果第1个是小写，则全部都要小写
+//	if word[0] <= 'z' && word[0] >= 'a' {
+//		return checkCase(word, 0, false)
+//	} else if (word[0] <= 'Z' && word[0] >= 'A') && (word[1] <= 'Z' && word[1] >= 'A') { //如果第1个是大写，且第2个也是大写，则全都大写
+//		return checkCase(word, 2, true)
+//	} else if (word[0] <= 'Z' && word[0] >= 'A') && (word[1] <= 'z' && word[1] >= 'a') { //如果第1个是大写，第2个是小写，后面的全部都要小写
+//		return checkCase(word, 2, false)
+//	} else {
+//		return false
+//	}
+//}
 
-	//如果第1个是小写，则全部都要小写
-	if word[0] <= 'z' && word[0] >= 'a' {
-		return checkCase(word, 0, false)
-	} else if (word[0] <= 'Z' && word[0] >= 'A') && (word[1] <= 'Z' && word[1] >= 'A') { //如果第1个是大写，且第2个也是大写，则全都大写
-		return checkCase(word, 2, true)
-	} else if (word[0] <= 'Z' && word[0] >= 'A') && (word[1] <= 'z' && word[1] >= 'a') { //如果第1个是大写，第2个是小写，后面的全部都要小写
-		return checkCase(word, 2, false)
-	} else {
-		return false
-	}
-}
-
-//检查字母全部是否都为大写或者小写
-//如果flag为true检查大写
-//如果flag为false检查小写
+// 检查字母全部是否都为大写或者小写
+// 如果flag为true检查大写
+// 如果flag为false检查小写
 func checkCase(word string, i int, flag bool) bool {
 
 	var l, r byte
@@ -53,13 +52,14 @@ func checkCase(word string, i int, flag bool) bool {
 	return true
 }
 
-/**
+/*
+*
 方法二：
 思路：
 1. 如果长度小于等于1直接返回true
 2. 如果有两个字符以及以上且第1个字符是大写，从第3个字符往后所有字符的大小写都要与第2个字符的大小写相同。
 还有一种情况我们得考虑：字符串的第1个字符是小写的，第2个字符是大写的，直接返回false，（前提：字符串长度大于等于2）
- */
+*/
 func detectCapitalUse(word string) bool {
 	//如果长度小于等于1直接返回true
 	if len(word) <= 1 {
@@ -82,4 +82,3 @@ func detectCapitalUse(word string) bool {
 
 	return true
 }
-

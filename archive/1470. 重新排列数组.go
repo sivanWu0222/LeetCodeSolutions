@@ -1,8 +1,12 @@
-/**
- @Author       cvenwu
- @Datetime     2022/9/9 22:49
- @Description
-**/
+/*
+*
+
+	@Author       cvenwu
+	@Datetime     2022/9/9 22:49
+	@Description
+
+*
+*/
 package main
 
 import "fmt"
@@ -14,21 +18,21 @@ import "fmt"
 // @param n:
 // @return []int:
 //
-func shuffle(nums []int, n int) []int {
-	ret := make([]int, len(nums))
-	length := len(nums)
-	i, j := 0, length>>1
-	for k := 0; k < length; {
-		ret[k] = nums[i]
-		k++
-		i++
-		ret[k] = nums[j]
-		j++
-		k++
-	}
-
-	return ret
-}
+//func shuffle(nums []int, n int) []int {
+//	ret := make([]int, len(nums))
+//	length := len(nums)
+//	i, j := 0, length>>1
+//	for k := 0; k < length; {
+//		ret[k] = nums[i]
+//		k++
+//		i++
+//		ret[k] = nums[j]
+//		j++
+//		k++
+//	}
+//
+//	return ret
+//}
 
 // 按照LeetCode题解进一步优化
 
